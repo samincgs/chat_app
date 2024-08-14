@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat App</title>
+    <link rel="stylesheet" href="/static/main.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-top">
+      <h1 class="page-title">Chat App</h1>
+    </div>
+    <div>
+      <div class="channels" id="channels">
+        <div class='channel-name'>
+            #channel1
+        </div>
+        <div class='channel-name'>
+            #channel2
+        </div>
+      </div class="content">
+      <div class="messages" id="messages">
+        <div class='message'>
+            Samincgs: This is a message!
+        </div>
+        <div class='message'>
+            Samincgs: This is another message.
+        </div>
+      </div>
+      <div class="user-input" id="user-input">
+        <input
+          type="text"
+          class="user-input-box"
+          id="message-input"
+          name="message-input"
+          placeholder="type here"
+          autocomplete="off"
+        />
+        <button class="message-send" id="message-send">send</button>
+      </div>
+    </div>
+  </body>
+</html>
