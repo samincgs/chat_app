@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, jsonify, request
 import time
 
 app = Flask(__name__)
@@ -45,10 +45,9 @@ def clean(string):
     return string.replace('<', '').replace('>', '')
 
 # option 1
-# f = open('messaging.html', 'r')
-# messaging_layout = f.read()
-# f.close()
-# return messaging_layout
+f = open('templates/messaging.html', 'r')
+messaging_layout = f.read()
+f.close()
 
 @app.route('/')
 def home():
@@ -59,8 +58,8 @@ def home():
 
 @app.route('/channel/<channel_id>')
 def channel(channel_id):
+    return messaging_layout
     #option 2
-    return render_template('messaging.html')
     # output = '<a href="/">Home Page</a><br><br>'
     # for message in channels[channel_id]:
     #     output += message + '<br>'
@@ -88,8 +87,11 @@ def api_send_message():
     
     channels['channel'].append(message_data)
     
-    return jsonify({'status': 'sucess'})
+    return jsonify({'status': 'success'})
+
+print(home.__name__)
 
 if __name__ == '__main__':
     app.run(port=3000, debug=True)
+    
     
