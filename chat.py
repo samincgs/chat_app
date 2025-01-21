@@ -1,5 +1,5 @@
-from flask import Flask, jsonify, request
 import time
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
@@ -38,7 +38,6 @@ channels = {
         'time': 2,
     },
   ],
-    
 }
 
 def clean(string):
@@ -75,7 +74,7 @@ def api_channel(channel_id):
 
 @app.route('/api/send_message', methods=['POST'])
 def api_send_message():
-    sent_message = request.json()
+    sent_message = request.json
     
     channel = sent_message['channel']
     
@@ -85,13 +84,11 @@ def api_send_message():
         'time': time.time(),
     }
     
-    channels['channel'].append(message_data)
+    channels[channel].append(message_data)
     
     return jsonify({'status': 'success'})
 
-print(home.__name__)
-
 if __name__ == '__main__':
-    app.run(port=3000, debug=True)
+    app.run(port=3000)
     
     

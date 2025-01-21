@@ -17,12 +17,8 @@
     </div>
     <div class="content">
       <div class="channels" id="channels">
-        <div class="channel-name">#channel1</div>
-        <div class="channel-name">#channel2</div>
       </div>
       <div class="messages" id="messages">
-        <div class="message">Samincgs: This is a message!</div>
-        <div class="message">Samincgs: This is another message.</div>
       </div>
       <div class="user-input" id="user-input">
         <input
@@ -33,7 +29,7 @@
           placeholder="type here"
           autocomplete="off"
         />
-        <button class="message-send" id="message-send">send</button>
+        <button class="message-send" id="message-send" onclick='sendMessage()'>send</button>
       </div>
     </div>
   </body>
